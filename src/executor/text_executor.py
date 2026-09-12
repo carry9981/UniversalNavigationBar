@@ -14,7 +14,7 @@ except Exception:  # pragma: no cover
     _AVAILABLE = False
 
 from ..config.models import Context, Item
-from ..utils.clipboard import get_clipboard_text, set_clipboard_text
+from ..utils.clipboard import get_clipboard_text, set_clipboard_text, save_clipboard, restore_clipboard
 from ..utils.variables import replace_variables
 
 
@@ -43,7 +43,7 @@ class TextExecutor(BaseExecutor):
             self._type(text, delay_ms)
 
     def _paste(self, text: str) -> None:
-        original = get_clipboard_text()
+        saved = save_clipboard()
         try:
             set_clipboard_text(text)
             keyboard = Controller()
@@ -51,10 +51,8 @@ class TextExecutor(BaseExecutor):
                 keyboard.press("v")
                 keyboard.release("v")
         finally:
-            try:
-                set_clipboard_text(original)
-            except Exception:
-                pass
+            if saved:
+                restore_clipboard(saved)
 
     def _type(self, text: str, delay_ms: int) -> None:
         keyboard = Controller()

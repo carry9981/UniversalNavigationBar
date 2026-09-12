@@ -16,7 +16,7 @@ except Exception:  # pragma: no cover
     Key = None
     _KEYBOARD_AVAILABLE = False
 
-from ..utils.clipboard import get_clipboard_text, set_clipboard_text
+from ..utils.clipboard import get_clipboard_text, save_clipboard, restore_clipboard
 
 
 class ClipboardGetter(BaseTextGetter):
@@ -34,7 +34,7 @@ class ClipboardGetter(BaseTextGetter):
     def get_selected_text(self) -> str:
         if not _KEYBOARD_AVAILABLE:
             return ""
-        original = get_clipboard_text()
+        saved = save_clipboard() if self.restore else None
         try:
             keyboard = Controller()
             with keyboard.pressed(Key.ctrl):
@@ -45,8 +45,5 @@ class ClipboardGetter(BaseTextGetter):
         except Exception:
             return ""
         finally:
-            if self.restore:
-                try:
-                    set_clipboard_text(original)
-                except Exception:
-                    pass
+            if self.restore and saved:
+                restore_clipboard(saved)
