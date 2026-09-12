@@ -1,0 +1,193 @@
+{
+  "version": "1.0.0",
+  "trigger": {
+    "text_select": {
+      "enabled": true,
+      "min_distance_px": 15,
+      "max_duration_sec": 2.0
+    },
+    "left_click_hold": {
+      "enabled": true,
+      "hold_duration_sec": 0.5,
+      "move_tolerance_px": 6
+    }
+  },
+  "text_getter": {
+    "method": "uiautomation",
+    "fallback_to_clipboard": true,
+    "clipboard_restore": true,
+    "cache_duration_ms": 500
+  },
+  "ui": {
+    "theme": "dark",
+    "opacity": 0.92,
+    "border_radius_px": 10,
+    "font_family": "Microsoft YaHei, sans-serif",
+    "font_size_px": 13,
+    "item_padding_px": 8,
+    "max_width_px": 400,
+    "position_offset_px": 15,
+    "shadow": true,
+    "blur_background": true
+  },
+  "items": [
+    {
+      "id": "builtin_voice_input",
+      "name": "语音输入",
+      "icon": "🎤",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 0,
+      "config": {
+        "keys": ["ctrl", "f2"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_select_copy",
+      "name": "全选复制",
+      "icon": "📄",
+      "type": "script",
+      "enabled": true,
+      "order": 1,
+      "config": {
+        "script": "multi_hotkey.py",
+        "args": ["ctrl+a", "ctrl+c"],
+        "timeout_sec": 10,
+        "run_async": false
+      }
+    },
+    {
+      "id": "builtin_select_paste",
+      "name": "全选粘贴",
+      "icon": "📝",
+      "type": "script",
+      "enabled": true,
+      "order": 2,
+      "config": {
+        "script": "multi_hotkey.py",
+        "args": ["ctrl+a", "ctrl+v"],
+        "timeout_sec": 10,
+        "run_async": false
+      }
+    },
+    {
+      "id": "builtin_select_clipboard",
+      "name": "全选剪贴板",
+      "icon": "📋",
+      "type": "script",
+      "enabled": true,
+      "order": 3,
+      "config": {
+        "script": "multi_hotkey.py",
+        "args": ["ctrl+a", "win+v"],
+        "timeout_sec": 10,
+        "run_async": false
+      }
+    },
+    {
+      "id": "builtin_enter",
+      "name": "回车键",
+      "icon": "↵",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 4,
+      "config": {
+        "keys": ["enter"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_backspace",
+      "name": "退格键",
+      "icon": "⌫",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 5,
+      "config": {
+        "keys": ["backspace"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_screenshot",
+      "name": "截图",
+      "icon": "📷",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 6,
+      "config": {
+        "keys": ["ctrl", "alt", "a"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_clipboard_history",
+      "name": "剪贴板历史",
+      "icon": "🕘",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 7,
+      "config": {
+        "keys": ["win", "v"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_copy",
+      "name": "复制",
+      "icon": "📋",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 8,
+      "config": {
+        "keys": ["ctrl", "c"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_paste",
+      "name": "粘贴",
+      "icon": "📌",
+      "type": "hotkey",
+      "enabled": true,
+      "order": 9,
+      "config": {
+        "keys": ["ctrl", "v"],
+        "delay_ms": 50
+      }
+    },
+    {
+      "id": "builtin_search",
+      "name": "搜索",
+      "icon": "🔍",
+      "type": "script",
+      "enabled": true,
+      "order": 10,
+      "config": {
+        "script": "search_web.py",
+        "args": ["{selected_text}"],
+        "timeout_sec": 10,
+        "run_async": true
+      }
+    },
+    {
+      "id": "builtin_greeting",
+      "name": "问候语",
+      "icon": "👋",
+      "type": "text",
+      "enabled": true,
+      "order": 11,
+      "config": {
+        "content": "您好，请问有什么可以帮助您的？",
+        "mode": "type",
+        "delay_ms": 10,
+        "variables": false
+      }
+    }
+  ],
+  "general": {
+    "auto_start": false,
+    "check_updates": true
+  }
+}
