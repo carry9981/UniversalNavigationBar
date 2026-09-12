@@ -7,3 +7,10 @@ build/
 .DS_Store
 .venv/
 venv/
+.idea/
+.vscode/
+*.log
+htmlcov/
+.coverage
+*.bak
+*.tmp

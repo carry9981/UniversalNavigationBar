@@ -13,7 +13,7 @@ class ItemWidget(QFrame):
     clicked = pyqtSignal(object)  # 携带 Item
 
     # 固定条目尺寸，保证网格对齐
-    ITEM_WIDTH = 80
+    ITEM_WIDTH = 90
     ITEM_HEIGHT = 70
 
     def __init__(self, item: Item, parent=None) -> None:

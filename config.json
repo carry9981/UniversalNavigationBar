@@ -39,7 +39,10 @@
       "enabled": true,
       "order": 0,
       "config": {
-        "keys": ["ctrl", "f2"],
+        "keys": [
+          "ctrl",
+          "f2"
+        ],
         "delay_ms": 50
       }
     },
@@ -52,7 +55,10 @@
       "order": 1,
       "config": {
         "script": "multi_hotkey.py",
-        "args": ["ctrl+a", "ctrl+c"],
+        "args": [
+          "ctrl+a",
+          "ctrl+c"
+        ],
         "timeout_sec": 10,
         "run_async": false
       }
@@ -66,7 +72,10 @@
       "order": 2,
       "config": {
         "script": "multi_hotkey.py",
-        "args": ["ctrl+a", "ctrl+v"],
+        "args": [
+          "ctrl+a",
+          "ctrl+v"
+        ],
         "timeout_sec": 10,
         "run_async": false
       }
@@ -80,7 +89,10 @@
       "order": 3,
       "config": {
         "script": "multi_hotkey.py",
-        "args": ["ctrl+a", "win+v"],
+        "args": [
+          "ctrl+a",
+          "win+v"
+        ],
         "timeout_sec": 10,
         "run_async": false
       }
@@ -93,7 +105,9 @@
       "enabled": true,
       "order": 4,
       "config": {
-        "keys": ["enter"],
+        "keys": [
+          "enter"
+        ],
         "delay_ms": 50
       }
     },
@@ -105,7 +119,9 @@
       "enabled": true,
       "order": 5,
       "config": {
-        "keys": ["backspace"],
+        "keys": [
+          "backspace"
+        ],
         "delay_ms": 50
       }
     },
@@ -117,7 +133,11 @@
       "enabled": true,
       "order": 6,
       "config": {
-        "keys": ["ctrl", "alt", "a"],
+        "keys": [
+          "ctrl",
+          "alt",
+          "a"
+        ],
         "delay_ms": 50
       }
     },
@@ -129,7 +149,10 @@
       "enabled": true,
       "order": 7,
       "config": {
-        "keys": ["win", "v"],
+        "keys": [
+          "win",
+          "v"
+        ],
         "delay_ms": 50
       }
     },
@@ -141,45 +164,51 @@
       "enabled": true,
       "order": 8,
       "config": {
-        "keys": ["ctrl", "c"],
+        "keys": [
+          "ctrl",
+          "c"
+        ],
         "delay_ms": 50
       }
     },
     {
       "id": "builtin_paste",
       "name": "粘贴",
-      "icon": "📌",
+      "icon": "📎",
       "type": "hotkey",
       "enabled": true,
       "order": 9,
       "config": {
-        "keys": ["ctrl", "v"],
+        "keys": [
+          "ctrl",
+          "v"
+        ],
         "delay_ms": 50
       }
     },
     {
-      "id": "builtin_search",
-      "name": "搜索",
-      "icon": "🔍",
-      "type": "script",
+      "id": "builtin_comma",
+      "name": "逗号",
+      "icon": "，",
+      "type": "text",
       "enabled": true,
       "order": 10,
       "config": {
-        "script": "search_web.py",
-        "args": ["{selected_text}"],
-        "timeout_sec": 10,
-        "run_async": true
+        "content": ",",
+        "mode": "type",
+        "delay_ms": 10,
+        "variables": false
       }
     },
     {
-      "id": "builtin_greeting",
-      "name": "问候语",
-      "icon": "👋",
+      "id": "builtin_period",
+      "name": "句号",
+      "icon": "。",
       "type": "text",
       "enabled": true,
       "order": 11,
       "config": {
-        "content": "您好，请问有什么可以帮助您的？",
+        "content": "。",
         "mode": "type",
         "delay_ms": 10,
         "variables": false
@@ -187,7 +216,7 @@
     }
   ],
   "general": {
-    "auto_start": false,
+    "auto_start": true,
     "check_updates": true
   }
 }

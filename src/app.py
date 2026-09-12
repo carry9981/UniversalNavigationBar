@@ -110,20 +110,6 @@ class Application(QObject):
             return
 
         self._last_pos = (int(event.x), int(event.y))
-        self.text_getter.invalidate_cache()
-        selected_text = self.text_getter.get_selected_text()
-
-        context = Context(
-            selected_text=selected_text,
-            clipboard=get_clipboard_text(),
-            mouse_x=int(event.x),
-            mouse_y=int(event.y),
-            active_window=_active_window_title(),
-            trigger_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            trigger_source=event.source,
-            config_dir=self.config_manager.config_dir,
-            plugin_dir=self.plugin_dir,
-        )
 
         items = self.config_manager.get_items(enabled_only=True)
         if not items:
