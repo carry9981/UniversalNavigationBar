@@ -25,7 +25,7 @@
     "font_family": "Microsoft YaHei, sans-serif",
     "font_size_px": 13,
     "item_padding_px": 8,
-    "max_width_px": 400,
+    "max_width_px": 420,
     "position_offset_px": 15,
     "shadow": true,
     "blur_background": true
@@ -113,14 +113,14 @@
     },
     {
       "id": "builtin_backspace",
-      "name": "退格键",
+      "name": "删除键",
       "icon": "⌫",
       "type": "hotkey",
       "enabled": true,
       "order": 5,
       "config": {
         "keys": [
-          "backspace"
+          "delete"
         ],
         "delay_ms": 50
       }

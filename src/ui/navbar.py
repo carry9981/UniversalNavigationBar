@@ -234,7 +234,9 @@ class NavBar(QWidget):
         self.setFixedWidth(width)
         self.setFixedHeight(outer_h)
 
-        x, y = clamp_to_screen(int(pos[0]), int(pos[1]), self.width(), self.height(), offset)
+        x = int(pos[0]) - width // 2
+        y = int(pos[1]) + offset
+        x, y = clamp_to_screen(x, y, self.width(), self.height(), offset)
         self.move(x, y)
         self.show()
         self.raise_()
